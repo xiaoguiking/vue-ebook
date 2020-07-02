@@ -8,7 +8,21 @@
   </div>
 </template>
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    // ...mapGetters(["test"])
+    ...mapGetters(["test"])
+  },
+  mounted() {
+    this.$store.dispatch("setTest", 4).then(() => {
+      // 直接获取
+      // console.log(this.$store.state.book.test);
+      // 通过getters获取
+      console.log(this.test);
+    });
+  }
+};
 document.addEventListener("ODMContentLoaded", () => {
   const html = document.querySelector("html");
   let fontSize = window.innerHeight / 10;
@@ -18,6 +32,7 @@ document.addEventListener("ODMContentLoaded", () => {
 });
 </script>
 <style lang="less" scoped>
+// 引入全局global.less样式
 @import "./assets/styles/global.less";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
