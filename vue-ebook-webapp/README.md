@@ -6,6 +6,13 @@
 - vuex + mixin 实现组件解耦
 - ES6 使用
 - 科大讯发 web 在线 api 合成开发
+- 字体图标
+- 项目依赖包下载配置
+- 准备 web 字体
+- viewport 配置
+- rem 设置 + 自适应布局目录
+- global.scss + reset.scss 文件
+- 引入 vuex
 
 ### 搭建静态资源服务器
 
@@ -71,5 +78,22 @@ import './assets/fonts/daysOne.css'
 - rem
 
 ```js
+```
+
+### 问题点
+
+1.打包注意点
+`vue.config.js`文件
 
 ```
+module.exports = {
+  publicPath: process.env.NODE_ENV === "production" ? "./" : "/"
+};
+
+```
+
+2.安装 epubjs cnpm i --save e pubjs
+
+3. 安装 npm i node-sass sass-loader
+
+### 三、
