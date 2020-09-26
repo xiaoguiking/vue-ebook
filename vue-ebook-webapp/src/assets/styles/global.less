@@ -4,7 +4,10 @@
 @import "./reset.css";
 
 // 等比例缩放
-// $ratio: 375 / 10;
-// @function px2rem($px) {
-//   @return $px / $ratio;
+// @ratio: 75;
+// .px2rem(@px) {
+//    unit(@px / @ratio);
 // }
+.rem(@name,@px) {
+  @{name}: unit(@px / 75, rem);
+}
